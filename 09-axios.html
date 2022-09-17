@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.9/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+  axios.get('https://api.xygeng.cn/one',{})
+  .then(res => {
+    console.log(res.data.data)
+  })
+  .catch(err => {
+    console.error(err); 
+  })
+  
+//  const ser = axios({
+//       method: 'get',
+//       url : 'https://api.xygeng.cn/one',
+//       // params : {},
+      
+//     }).then((result) => {
+//       console.log(result);
+//     }).catch((err) => {
+      
+//     });
+    
+   var vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          a : 1,
+          b : 2,
+          username : 'sia'
+        }
+      },
+      methods: {
+       
+      },
+      filters: {},
+      computed: {
+        newVal(){
+          return this.a + this.b
+        }
+      },
+      watch: {
+       userName: {
+        handler(){
+          
+        },
+        immediate: true,
+        deep: false
+       }
+      }
+    })
+  </script>
+
+</body>
+</html>
