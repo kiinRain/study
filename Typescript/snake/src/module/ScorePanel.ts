@@ -13,9 +13,7 @@ export default class ScorePanel{
     this.max_level = max_level
     this.update_level = update_level
   }
-  init(){
-    this.btn_open.addEventListener('click',this.btnhandle.bind(this))
-  }
+ 
   addscore(){
    const score = +this.score.innerHTML + 1
     if(score % this.update_level === 0 ){
@@ -28,7 +26,5 @@ export default class ScorePanel{
       this.level.innerHTML = (+this.level.innerHTML + 1) + ''
     }
   }
-  btnhandle(e:MouseEvent){
-
-  }
+ 
 }
